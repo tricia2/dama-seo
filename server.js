@@ -6,10 +6,13 @@ var app = express();
 //set port
 app.set('port', (process.env.PORT || 5000));
 //use static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'DAMAITSE3')));
 //express routes
 app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, 'views/app.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+app.get('/full-width', function(req, res){
+  res.sendFile(path.join(__dirname, 'pages/full-width.html'));
 });
 
 //express server listen
